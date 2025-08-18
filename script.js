@@ -17,7 +17,7 @@ document.getElementById('explore-btn').addEventListener('click', ()=>{
 
 // Botón contacto WhatsApp
 document.getElementById('whatsapp-btn').addEventListener('click', () => {
-  window.open('https://wa.me/5491165662804', '_blank'); // reemplaza con tu número
+  window.open('https://wa.me/5491154547862', '_blank'); // reemplaza con tu número
 });
 
 
@@ -28,3 +28,4 @@ hamburger.addEventListener('click', ()=>{
   navLinks.classList.toggle('nav-active');
   hamburger.classList.toggle('toggle');
 });
+
