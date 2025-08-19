@@ -35,6 +35,45 @@ nav ul li a:hover { color:#f04e30; }
 .hero p { font-size:1.2rem; margin-bottom:30px; }
 .hero button { padding:12px 30px; font-size:1rem; border:none; background:#f04e30; color:#fff; cursor:pointer; border-radius:30px; transition:background 0.3s ease; }
 .hero button:hover { background:#d94427; }
+/* Texto general */
+.texto {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Marca resaltada */
+.marca {
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Botón estilo Mercado Libre */
+.link {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #fff159, #ffce00); /* Colores ML */
+  color: #111;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Hover (efecto al pasar el mouse) */
+.link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #ffe100, #ffb600);
+}
+
 
 /* Secciones */
 section { padding:100px 50px; text-align:center; }
@@ -81,4 +120,5 @@ footer a { color:#f04e30; margin:0 10px; }
 .product-card, section p, section h2 { opacity:0; transform:translateY(50px); }
 
 /* Keyframe*
+
 
