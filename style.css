@@ -44,33 +44,6 @@ nav ul li a:hover { color:#f04e30; }
   text-align: center;
   margin: 20px 0;
 }
-.btn-Mas+ {
-  display: inline-block;
-  padding: 12px 32px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #111;
-  background: #fff;
-  border: 2px solid #111;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  text-align: center;
-}
-
-.btn-Mas+:hover {
-  background: #111;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.btn-Mas+:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
 
 /* Marca resaltada */
 .marca {
@@ -114,6 +87,33 @@ section p { font-size:1rem; max-width:700px; margin:0 auto 40px; line-height:1.6
 .product-card img { width:100%; display:block; }
 .product-card h3 { font-size:1.2rem; margin:15px 0 10px; }
 .product-card p { font-size:0.95rem; color:#777; margin-bottom:15px; }
+.btn-Mas+ {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-Mas+:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-Mas+:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
 
 #whatsapp-btn {
   background-color: #25D366; /* Verde WhatsApp */
@@ -147,6 +147,7 @@ footer a { color:#f04e30; margin:0 10px; }
 .product-card, section p, section h2 { opacity:0; transform:translateY(50px); }
 
 /* Keyframe*
+
 
 
 
