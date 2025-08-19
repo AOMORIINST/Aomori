@@ -48,7 +48,7 @@ nav ul li a:hover { color:#f04e30; }
 /* Marca resaltada */
 .marca {
   font-weight: 700;
-  color: #111;
+  color: #ffd000;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -161,6 +161,7 @@ footer a { color:#f04e30; margin:0 10px; }
 .product-card, section p, section h2 { opacity:0; transform:translateY(50px); }
 
 /* Keyframe*
+
 
 
 
