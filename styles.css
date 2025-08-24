@@ -6,7 +6,7 @@
   --muted: #000000;
   --primary: #b700ff;
   --accent: #ff00dd;
-  --success: #1de9b6;
+  --success: #ffffff;
   --shadow-dark: #e567f1f3;
   --shadow-light: #e667f177;
   --radius: 18px;
@@ -50,6 +50,14 @@ body{
 .nav-toggle .line:nth-child(3){top:30px}
 
 /* Hero / Banner */
+/* Ocultar ambos banners por defecto */
+.hero-mobile { display: none !important; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-desktop { display: none !important; }
+  .hero-mobile { display: grid !important; }
+}
 .hero{
   position:relative;
   min-height:86vh;
@@ -83,7 +91,7 @@ body{
 .btn.primary:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,212,255,.35)}
 .btn.ghost{background:transparent; border-color:rgba(255,255,255,.12)}
 .btn.ghost:hover{background:rgba(255,255,255,.06)}
-.btn.whats{background:linear-gradient(135deg, #25D366, #1de9b6)}
+.btn.whats{background:linear-gradient(135deg, #25D366, #25D366)}
 .btn.full{width:100%}
 
 /* Orbes decorativos flotantes */
@@ -159,4 +167,3 @@ body{
 @media (max-width: 460px){
   .grid-products{grid-template-columns:1fr}
 }
-
