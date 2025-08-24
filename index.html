@@ -1,129 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aomori | Moda Minimalista</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="https://http2.mlstatic.com/D_NQ_NP_906685-MLA89504417650_082025-G.webp" type="image/png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aomori | Oficial</title>
+  <meta name="description" content="Aomori · Indumentaria premium. Somos Tienda Oficial en Mercado Libre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="https://http2.mlstatic.com/D_NQ_NP_906685-MLA89504417650_082025-G.webp">
+  <!-- Librerías opcionales usadas SOLO para mejorar animaciones -->
+  <script defer src="https://unpkg.com/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
 </head>
 <body>
-  <header>
-    <div class="logo">AOMORI</div>
-    <nav>
-      <ul class="nav-links">
+  <!-- Header del mismo color que el fondo (se mimetiza) -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Principal">
+      <a class="logo" href="#top" aria-label="Aomori inicio">
+        <span class="logo-text">Aomori</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="navmenu" aria-label="Abrir menú">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+      <ul id="navmenu" class="nav-links">
         <li><a href="#hero">Inicio</a></li>
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#mercadolibre">Mercado Libre</a></li>
+        <li>
       </ul>
-      <div class="hamburger">
-        <div></div><div></div><div></div>
-      </div>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
+  <!-- Banner / Hero -->
+  <section id="hero" class="hero container">
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <h1>AOMORI</h1>
-      <h4>Diseño, Sencillez y Calidad.</h4>
-      <b></b>
-      <button id="explore-btn">Explora Nuestros Productos Destacados</button>
-    </div>
-  </section>
- <p class="texto">
-   Visita Nuestra <span class="marca">TIENDA OFICIAL</span> en Mercado Libre.
-</p>
+      <p class="eyebrow">Colección 2025 • Diseño | Calidad | Sencillez</p>
+      <h1 class="headline">
+        Calidad en cada <span class="gradient-text">prenda</span>
+      </h1>
+      <p class="subhead">Básicos premium. Somos <strong>Tienda Oficial</strong> en Mercado Libre.</p>
+      <div class="cta">
+        <a class="btn primary" href="#productos">Ver productos</a>
+        <a class="btn ghost" href="#mercadolibre">Ir a Mercado Libre</a>
+      </div>
 
-<center><a href="https://www.mercadolibre.com.ar/tienda/aomori" target="_blank" class="link">
-  Ir a nuestra tienda en Mercado Libre
-</a></center>
-  <section id="products">
-    <h2>Productos Destacados</h2>
-    <div class="products">
-      <div class="product-card">
-        <a href="https://articulo.mercadolibre.com.ar/MLA-2021008758-remera-mujer-manga-corta-liviana-modal-talle-grande-_JM#polycard_client=recommendations_home_navigation-recommendations&reco_backend=machinalis-homes-univb-equivalent-offer&reco_client=home_navigation-recommendations&reco_item_pos=1&reco_backend_type=function&reco_id=1635c7d1-7734-42fb-a1b8-0287f4d651e4&c_id=/home/navigation-recommendations/element&c_uid=136c3c4e-85c0-438c-865b-e0ce8e2dc26e" target="_blank">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_987044-MLA89963394151_082025-F.webp" alt="Producto 1"></a>
-        <h3>Remera Manga Corta</h3>
-        <p>Diseño elegante y confortable en modal premium.</p>
+      <div class="badges">
+        <div class="badge neo" aria-label="Tienda oficial">Tienda Oficial</div>
+        <div class="badge neo">Cambios fáciles</div>
+        <div class="badge neo">Envíos a todo el país</div>
       </div>
-      <div class="product-card">
-        <a href="https://articulo.mercadolibre.com.ar/MLA-1481246927-remera-basica-mujer-manga-larga-liviana-talles-grandes-_JM#polycard_client=recommendations_vip-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=rk_entity_sameseller&reco_client=vip-seller_items-above&reco_item_pos=1&reco_backend_type=low_level&reco_id=67549287-e957-4679-b6d3-6fafbdb4c64b" target="_blank">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_990418-MLA89356460624_082025-F.webp" alt="Producto 2"></a>
-        <h3>Remera Manga Larga</h3>
-        <p>Minimalismo y comodidad en cada movimiento</p>
-      </div>
-      <div class="product-card">
-        <a href="https://articulo.mercadolibre.com.ar/MLA-1480903355-remera-crop-top-mujer-manga-corta-casual-talle-chico-_JM#polycard_client=recommendations_vip-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=rk_entity_sameseller&reco_client=vip-seller_items-above&reco_item_pos=3&reco_backend_type=low_level&reco_id=9e3347e1-d1a0-4e16-8c35-5ab4fd549215" target="_blank">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_614380-MLA89587492404_082025-F.webp" alt="Producto 3"></a>
-        <h3>Crop Top Manga Corta</h3>
-        <p>Estilo moderno con detalles únicos de nuestra marca</p>
-      </div>
-      <div class="product-card">
-        <a href="https://www.mercadolibre.com.ar/remera-mujer-manga-corta-liviana-talles-especiales/up/MLAU3353129010?pdp_filters=seller_id%3A463491215#polycard_client=recommendations_vip-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=rk_entity_sameseller&reco_client=vip-seller_items-above&reco_item_pos=3&reco_backend_type=low_level&reco_id=df194413-9323-49ca-b5da-1ffe96ce8e0d&wid=MLA2226937984&sid=recos" target="_blank">
- <img src="https://http2.mlstatic.com/D_NQ_NP_2X_717656-MLA89721161403_082025-F.webp" alt="Producto 4">
- <h3>Remera Talle Especial</h3></a>
-        <p>Diseño elegante y confortable en modal premium.</p>
-      </div>
+    </div>
+
+    <!-- Elementos decorativos animados -->
+    <div class="orbs" aria-hidden="true">
+      <span class="orb"></span>
+      <span class="orb"></span>
+      <span class="orb"></span>
     </div>
   </section>
 
-  <section id="about">
-    <h2>Sobre Nuestra Marca</h2>
-    <p>Aomori es una marca familiar argentina que diseña y confecciona ropa cómoda, suave y con estilo para bebés y mujeres. Cada prenda refleja el cariño de lo hecho en casa, combinando materiales de alta calidad y un acabado cuidadoso que garantiza durabilidad y confort.
+  <!-- Productos -->
+  <section id="productos" class="productos container">
+    <header class="section-head">
+      <h2>Productos Destacados</h2>
+      <p>Al hacer clic, te llevamos directo a la publicación en Mercado Libre.</p>
+    </header>
 
-Nuestras colecciones versátiles están pensadas para acompañar cada etapa de tu vida, ofreciendo productos funcionales y atemporales que se destacan por su calidad superior y atención al detalle.
+    <div class="grid-products">
+      <!-- Producto 1 -->
+      <article class="card product" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="media shimmer">
+          <img loading="lazy" src="https://http2.mlstatic.com/D_NQ_NP_2X_710002-MLA89356460616_082025-F.webp" alt="Remera básica Aomori negra"/>
+        </div>
+        <div class="info">
+          <h3>Remera Modal Manga Larga</h3>
+          <p>Del talle Xl al 3Xl.</p>
+          <div class="price">$14.555</div>
+          <a class="btn primary full" href="https://articulo.mercadolibre.com.ar/MLA-1481246927-remera-larga-mujer-manga-larga-liviana-talles-grandes-_JM?searchVariation=189569550125&pdp_filters=official_store%3A216864#polycard_client=search-nordic&searchVariation=189569550125&position=3&search_layout=grid&type=item&tracking_id=a1b9fe75-d017-4a5e-9da3-6e24afa555ca" target="_blank" rel="noopener">Ver en Mercado Libre</a>
+        </div>
+      </article>
+      <!-- Producto 2 -->
+      <article class="card product" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="media shimmer">
+          <img loading="lazy" src="https://http2.mlstatic.com/D_NQ_NP_2X_614380-MLA89587492404_082025-F.webp" alt=""/>
+        </div>
+        <div class="info">
+          <h3>Crop Top Manga Corta</h3>
+          <p>Talles XS al L</p>
+          <div class="price">$10.384</div>
+          <a class="btn primary full" href="https://articulo.mercadolibre.com.ar/MLA-1480903355-remera-crop-top-mujer-manga-corta-casual-talle-chico-_JM?searchVariation=189203691101&pdp_filters=official_store%3A216864#polycard_client=search-nordic&searchVariation=189203691101&position=7&search_layout=grid&type=item&tracking_id=a1b9fe75-d017-4a5e-9da3-6e24afa555ca" target="_blank" rel="noopener">Ver en Mercado Libre</a>
+        </div>
+      </article>
+      <!-- Producto 3 -->
+      <article class="card product" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="media shimmer">
+          <img loading="lazy" src="https://http2.mlstatic.com/D_NQ_NP_2X_717656-MLA89721161403_082025-F.webp" alt=""/>
+        </div>
+        <div class="info">
+          <h3>Remera Manga Corta</h3>
+          <p>Talles Especiales.</p>
+          <div class="price">$23.187</div>
+          <a class="btn primary full" href="https://www.mercadolibre.com.ar/remera-mujer-manga-corta-liviana-talles-especiales/up/MLAU3353129010?pdp_filters=official_store%3A216864#polycard_client=search-nordic&searchVariation=MLAU3353129010&wid=MLA2226937984&position=1&search_layout=grid&type=product&tracking_id=a1b9fe75-d017-4a5e-9da3-6e24afa555ca&sid=search&gid=1&pid=1" target="_blank" rel="noopener">Ver en Mercado Libre</a>
+        </div>
+      </article>
+      <!-- Producto 4 -->
+      <article class="card product" data-tilt data-tilt-max="10" data-tilt-speed="400">
+        <div class="media shimmer">
+          <img loading="lazy" src="https://http2.mlstatic.com/D_NQ_NP_2X_657284-MLA90052420119_082025-F.webp" alt=""/>
+        </div>
+        <div class="info">
+          <h3>Remera Manga Corta escote V</h3>
+          <p>Del talle Xl al 3Xl.</p>
+          <div class="price">$13.467</div>
+          <a class="btn primary full" href="https://articulo.mercadolibre.com.ar/MLA-2025884736-remera-mujer-larga-escote-v-manga-corta-talles-grandes-_JM?pdp_filters=official_store%3A216864#polycard_client=mshops-appearance-api&source=eshops&component=tabbed_carousel&title=Lo+Mejor+para+Vos&tracking_id=966de9e9-4429-4a48-8268-66babb60745c&global_position=8&gid=1&pid=1" target="_blank" rel="noopener">Ver en Mercado Libre</a>
+        </div>
+      </article>
+    </div>
 
-Invertir en Aomori es elegir prendas que no solo se sienten bien, sino que mantienen su forma y suavidad con el tiempo.
-
-💗 Moda con amor. Calidad que se siente. Estilo que acompaña.</p>
+    <div class="center">
+      <a class="btn ghost" href="#mercadolibre">Ver Tienda Oficial completa</a>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contacto</h2>
-    <p>¿Tienes preguntas o quieres colaborar con nosotros? Escríbenos directamente por WhatsApp.</p>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<button id="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-  
+  <!-- Sección MercadoLibre -->
+  <section id="mercadolibre" class="mercado container">
+    <div class="ml-wrapper card neo">
+      <div class="ml-info">
+        <h2>Somos Tienda Oficial en Mercado Libre</h2>
+        <p>Comprá con la seguridad y beneficios de Mercado Libre. Publicaciones verificadas, cuotas y envíos a todo el país.</p>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.mercadolibre.com.ar/tienda/aomori">Ir a la Tienda Oficial</a>
+      </div>
+      <div class="ml-art">
+        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.23.0/mercadolibre/logo__large_plus.png" alt="Logo Mercado Libre" />
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 AOMORI ®. Todos los derechos reservados.</p>
-    <p>
-      <a href="https://www.instagram.com/aomoriinst" target="_blank" class="instagram-link">Instagram</a> |
-      <a href="#">Facebook</a> | 
-      <a href="#">TikTok</a>
-    </p>
+  <!-- Nosotros -->
+  <section id="nosotros" class="nosotros container">
+    <header class="section-head">
+      <h2>Nos mueve el diseño</h2>
+      <p>Materiales seleccionados, cortes precisos y una estética que mira al futuro.</p>
+    </header>
+    <div class="features">
+      <div class="feat card neo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7z" stroke="currentColor"/></svg>
+        <h3>Calidad</h3>
+        <p>Telas premium y confección cuidada para durar.</p>
+      </div>
+      <div class="feat card neo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor"/><path d="M12 3v9l6 3" stroke="currentColor"/></svg>
+        <h3>Performance</h3>
+        <p>Prendas pensadas para moverse con vos.</p>
+      </div>
+      <div class="feat card neo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor"/></svg>
+        <h3>Minimalismo</h3>
+        <p>Silencioso, versátil, sin logos estridentes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="cta-final container">
+    <div class="card neo stack">
+      <h2>¿Lista para tu próximo favorito?</h2>
+      <p>Descubrí la colección completa en nuestra Tienda Oficial.</p>
+      <div class="cta">
+        <a class="btn primary" href="#productos">Explorar</a>
+        <a class="btn whats" href="https://wa.me/5491154547862?text=Hola%20Aomori!%20Quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <p>© <span id="year"></span> Aomori. Todos los derechos reservados.</p>
+    <a href="#top" class="to-top" aria-label="Volver arriba">▲</a>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

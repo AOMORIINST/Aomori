@@ -1,0 +1,145 @@
+/* ===== AOMORI · Estilo futurista con toques de neumorfismo ===== */
+:root{
+  --bg: #e667f177;
+  --bg-2: #e667f177;
+  --text: #000000;
+  --muted: #000000;
+  --primary: #b700ff;
+  --accent: #ff00dd;
+  --success: #1de9b6;
+  --shadow-dark: #e567f1f3;
+  --shadow-light: #e667f177;
+  --radius: 18px;
+  --trans: 280ms cubic-bezier(.2,.7,.2,1);
+  --glass: rgba(0, 0, 0, 0.05);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text); background: radial-gradient(1200px 800px at 80% -10%, rgba(138,92,255,.18), transparent 40%),
+                      radial-gradient(1200px 800px at 10% 110%, rgba(0,212,255,.18), transparent 40%),
+                      var(--bg);
+  overflow-x:hidden;
+}
+
+.container{width:min(1200px, 92%); margin-inline:auto}
+.center{display:flex; justify-content:center; align-items:center; gap:.8rem}
+
+/* Header mimetizado */
+.site-header{position:sticky; top:0; z-index:50; background:transparent; backdrop-filter:saturate(140%) blur(6px)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:.8rem 0}
+.logo{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--text); font-weight:700}
+.logo-mark{width:36px; height:36px; display:grid; place-items:center; border-radius:10px;
+  background:linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow:0 10px 30px rgba(0,212,255,.25), inset 0 1px 0 rgba(255,255,255,.15);
+  animation:float 6s ease-in-out infinite;
+}
+.logo-text{font-family:Orbitron, Poppins, sans-serif; letter-spacing:.06em}
+
+.nav-links{display:flex; gap:1rem; list-style:none; margin:0; padding:0}
+.nav-links a{color:var(--text); text-decoration:none; padding:.6rem .9rem; border-radius:999px; opacity:.9}
+.nav-links a:hover{background:var(--glass); opacity:1}
+
+.nav-toggle{display:none; background:none; border:0; width:48px; height:48px; border-radius:12px; position:relative}
+.nav-toggle .line{position:absolute; left:12px; right:12px; height:2px; background:var(--text); transition:var(--trans)}
+.nav-toggle .line:nth-child(1){top:16px}
+.nav-toggle .line:nth-child(2){top:23px}
+.nav-toggle .line:nth-child(3){top:30px}
+
+/* Hero / Banner */
+.hero{position:relative; min-height:86vh; display:grid; place-items:center; padding:6rem 0 3rem}
+#bg-canvas{position:absolute; inset:0; width:100%; height:100%; z-index:-2}
+.hero-content{max-width:800px; text-align:center; animation:reveal .8s ease both}
+.eyebrow{letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-size:.8rem}
+.headline{font-family:Orbitron, Poppins, sans-serif; font-size:clamp(2rem, 6vw, 4rem); line-height:1.05; margin:.4rem 0 1rem}
+.gradient-text{background:linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 0 25px rgba(0,212,255,.4)}
+.subhead{color:#000000; font-size:clamp(1rem, 2.6vw, 1.25rem)}
+.badges{display:flex; justify-content:center; gap:.6rem; margin-top:1.2rem; flex-wrap:wrap}
+.badge{padding:.55rem .9rem; border-radius:999px; font-size:.85rem; opacity:.9}
+.badge.neo{background:var(--bg-2); box-shadow: 8px 8px 18px var(--shadow-dark), -8px -8px 18px var(--shadow-light)}
+
+/* Botones */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.9rem 1.2rem; border-radius:14px; text-decoration:none; color:var(--text); border:1px solid transparent; transition:transform var(--trans), box-shadow var(--trans), background var(--trans); font-weight:600}
+.btn.primary{background:linear-gradient(135deg, var(--primary), var(--accent)); box-shadow:0 10px 30px rgba(0,212,255,.25)}
+.btn.primary:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,212,255,.35)}
+.btn.ghost{background:transparent; border-color:rgba(255,255,255,.12)}
+.btn.ghost:hover{background:rgba(255,255,255,.06)}
+.btn.whats{background:linear-gradient(135deg, #25D366, #1de9b6)}
+.btn.full{width:100%}
+
+/* Orbes decorativos flotantes */
+.orbs{position:absolute; inset:0; pointer-events:none}
+.orb{position:absolute; width:240px; height:240px; border-radius:50%; filter:blur(40px); opacity:.35; background:radial-gradient(circle, var(--primary), transparent 60%); animation:float 10s ease-in-out infinite}
+.orb:nth-child(1){top:10%; left:8%}
+.orb:nth-child(2){bottom:12%; right:10%; animation-duration:13s}
+.orb:nth-child(3){top:20%; right:30%; animation-duration:11s}
+
+/* Secciones */
+.section-head{margin-bottom:1.2rem}
+.section-head h2{font-family:Orbitron, Poppins, sans-serif; letter-spacing:.02em}
+
+/* Tarjetas neumórficas */
+.card{border-radius:var(--radius); background:var(--bg-2); position:relative}
+.card.neo{box-shadow: 10px 10px 24px var(--shadow-dark), -10px -10px 24px var(--shadow-light)}
+.card::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; background:linear-gradient(180deg, rgba(255,255,255,.08), transparent 40%); opacity:.6}
+
+/* Productos */
+.productos{padding:3.2rem 0}
+.grid-products{display:grid; grid-template-columns:repeat(4, 1fr); gap:1.4rem}
+.product .media{aspect-ratio: 4/3; overflow:hidden; border-top-left-radius:var(--radius); border-top-right-radius:var(--radius)}
+.product .media img{width:100%; height:100%; object-fit:cover; transform:scale(1.02); transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.product:hover .media img{transform:scale(1.08)}
+.product .info{padding:1rem}
+.product h3{margin:.2rem 0 .3rem; font-size:1.1rem}
+.price{font-weight:700; color:#000000; margin:.5rem 0 1rem}
+
+/* Mercado Libre section */
+.mercado{padding:2rem 0 3.5rem}
+.ml-wrapper{display:grid; grid-template-columns: 1.2fr .8fr; gap:1.2rem; align-items:center; padding:1.6rem}
+.ml-info h2{margin:.2rem 0 0.6rem}
+.ml-art{display:grid; place-items:center}
+.ml-art img{max-width:220px; filter:drop-shadow(0 12px 30px rgba(255, 255, 255, 0.45))}
+
+/* Features */
+.nosotros{padding:2rem 0 3.5rem}
+.features{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
+.feat{padding:1.2rem}
+.feat svg{opacity:.9}
+
+/* CTA final */
+.cta-final{padding:2rem 0 4rem}
+.stack{padding:2rem; text-align:center}
+
+/* Footer */
+.footer{padding:2rem 0 3rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; border-top:1px solid rgba(255,255,255,.06)}
+.to-top{display:inline-grid; place-items:center; width:40px; height:40px; border-radius:10px; text-decoration:none; color:var(--text); border:1px solid rgba(255,255,255,.12)}
+.to-top:hover{background:rgba(255,255,255,.06)}
+
+/* Efectos utilitarios */
+.shimmer{position:relative}
+.shimmer::before{content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,.08) 30%, transparent 65%); transform:skewX(-20deg) translateX(-120%); animation:shimmer 4s infinite}
+
+/* Animaciones clave */
+@keyframes reveal{from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{transform:skewX(-20deg) translateX(-120%)} 100%{transform:skewX(-20deg) translateX(120%)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 rgba(0,212,255,0)} 50%{box-shadow:0 0 30px rgba(0,212,255,.35)}}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .grid-products{grid-template-columns:repeat(3, 1fr)}
+  .ml-wrapper{grid-template-columns: 1fr; text-align:center}
+}
+@media (max-width: 768px){
+  .nav-links{position:fixed; inset:auto 0 0 0; height:0; overflow:hidden; flex-direction:column; gap:0; background:rgba(12,15,19,.9); padding:0; border-top:1px solid rgba(255,255,255,.06); backdrop-filter:blur(12px); transition:height var(--trans)}
+  .nav-links.open{height:280px; padding:1rem}
+  .nav-toggle{display:inline-block}
+  .grid-products{grid-template-columns:repeat(2, 1fr)}
+  .features{grid-template-columns:1fr}
+}
+@media (max-width: 460px){
+  .grid-products{grid-template-columns:1fr}
+}
