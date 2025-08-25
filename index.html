@@ -15,6 +15,22 @@
             --white-bg: #FAFAFA;
             --text-dark: #374151;
         }
+           .boton {
+  background-color: #FFD700; /* amarillo dorado */
+  color: #000; /* texto negro */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px; /* hace el botón redondeado */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #FFC300; /* amarillo más oscuro al pasar el mouse */
+  transform: scale(1.05); /* efecto de agrandarse */
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
 
         body {
             font-family: 'Inter', sans-serif;
@@ -171,9 +187,8 @@
                     <a href="#nosotros" class="text-gray-700 hover:text-purple-600 transition-colors">Nosotros</a>
                 </div>
 
-                <button onclick="scrollToContact()" class="neu-button px-6 py-2 text-white font-semibold">
-                    Contacto
-                </button>
+                 <button class="boton" onclick="window.location.href='https://www.mercadolibre.com.ar/tienda/aomori';">
+    Nuestra tienda oficial
             </div>
         </nav>
     </header>
@@ -436,6 +451,7 @@
     </script>
 </body>
 </html>
+
 
 
 
