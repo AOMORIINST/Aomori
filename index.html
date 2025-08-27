@@ -3,459 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="https://http2.mlstatic.com/D_NQ_NP_906685-MLA89504417650_082025-G.webp">
-    <title>Aomori - Moda</title>
+    <link rel="icon" type="image/png" href="https://http2.mlstatic.com/D_NQ_NP_906685-MLA89504417650_082025-G.webp">
+    <title>Aomori - Ropa Minimalista</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --lila-primary: #8B5FBF;
-            --lila-secondary: #A78BFA;
-            --rosa-accent: #F472B6;
-            --white-bg: #FAFAFA;
-            --text-dark: #374151;
+            --rosa: #ff6b9d;
+            --lila: #9d4edd;
+            --lila-fuerte: #7b2cbf;
+            --rosa-suave: #ffc8dd;
         }
-        .boton {
-  background-color: #FFD700; /* amarillo dorado */
-  color: #000; /* texto negro */
-  padding: 12px 25px;
-  border: none;
-  border-radius: 50px; /* hace el botón redondeado */
+        .imagen {
+         width: 300%;
+         height: 100px;
+         background-image: ("https://i.pinimg.com/736x/77/37/4b/77374bea898309cd082b0f08ed8e9de3.jpg");
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        }
+        banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0, 4);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--lila-fuerte);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--rosa), var(--lila));
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(157, 78, 221, 0.3);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--rosa-suave), white);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    .boton-amarillo {
+  display: inline-block; /* para que se comporte como botón */
+    align-items: center;     /* centra verticalmente */
+  justify-content: center;
+  text-decoration: none; /* quita el subrayado del link */
+  background: linear-gradient(135deg, #7b2cbf, #e41aff);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 110px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 
-.boton:hover {
-  background-color: #FFC300; /* amarillo más oscuro al pasar el mouse */
-  transform: scale(1.05); /* efecto de agrandarse */
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+.boton-amarillo:hover {
+  background: linear-gradient(135deg, #7b2cbf, #e41aff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--white-bg) 0%, #F3E8FF 100%);
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
+.boton-amarillo:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
 
-        /* Animaciones */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(139, 95, 191, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(139, 95, 191, 0.6); }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(-100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes rotate3d {
-            0% { transform: rotate3d(0, 1, 0, 0deg); }
-            100% { transform: rotate3d(0, 1, 0, 360deg); }
-        }
-
-        /* Efectos Neumorfismo */
-        .neu-card {
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            border-radius: 20px;
-            box-shadow: 20px 20px 60px #d9d9d9, 
-                        -20px -20px 60px #ffffff;
-            transition: all 0.3s ease;
-        }
-
-        .neu-card:hover {
-            box-shadow: 25px 25px 70px #d9d9d9, 
-                       -25px -25px 70px #ffffff;
-            transform: translateY(-5px);
-        }
-
-        .neu-button {
-            background: linear-gradient(145deg, var(--lila-primary), var(--lila-secondary));
-            border-radius: 15px;
-            box-shadow: 5px 5px 15px rgba(139, 95, 191, 0.2),
-                       -5px -5px 15px rgba(255, 255, 255, 0.7);
-            transition: all 0.3s ease;
-        }
-
-        .neu-button:hover {
-            box-shadow: 8px 8px 20px rgba(139, 95, 191, 0.3),
-                       -8px -8px 20px rgba(255, 255, 255, 0.8);
-            transform: translateY(-2px);
-        }
-
-        /* Animaciones aplicadas */
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-glow { animation: glow 4s ease-in-out infinite; }
-        .animate-slide-in { animation: slideIn 1s ease-out; }
-        .animate-fade-up { animation: fadeInUp 1s ease-out; }
-        .animate-pulse-slow { animation: pulse 3s ease-in-out infinite; }
-        .animate-rotate-3d { animation: rotate3d 23s linear infinite; }
-
-        /* Header transparente */
-        .header-transparent {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .header-scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Gradientes y efectos */
-        .gradient-text {
-            background: linear-gradient(135deg, var(--lila-primary), var(--rosa-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* WhatsApp flotante */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background: #25D366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 4px 4px 6px #999;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-text {
-                font-size: 2.5rem;
-            }
-            
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 24px;
-            }
-        }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Header transparente -->
-    <header id="header" class="header-transparent fixed w-full z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text animate-pulse-slow">
-                    AOMORI
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
-                    <a href="#productos" class="text-gray-700 hover:text-purple-600 transition-colors">Productos</a>
-                    <a href="#nosotros" class="text-gray-700 hover:text-purple-600 transition-colors">Nosotros</a>
-                </div>
+<body class="bg-white">
+    <!-- Navbar Flotante -->
+    <nav class="navbar fixed top-5 left-1/2 transform -translate-x-1/2 z-50 rounded-full px-8 py-3 w-max">
+        <div class="flex items-center space-x-8">
+            <a href="#" class="nav-link text-gray-800 font-medium hover:text-purple-700">Inicio</a>
+            <a href="#nosotros" class="nav-link text-gray-800 font-medium hover:text-purple-700">Nosotros</a>
+            <a href="#productos" class="nav-link text-gray-800 font-medium hover:text-purple-700">Productos</a>
+            <a href="https://wa.me/5491154547862?text=Hola%20Aomori,%20me%20interesan%20sus%20productos" 
+               target="_blank" 
+               class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                Contacto
+            </a>
+        </div>
+    </nav>
 
-               <button class="boton" onclick="window.location.href='https://www.mercadolibre.com.ar/tienda/aomori';">
-    Nuestra tienda oficial
+    <!-- Banner Principal -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 gradient-bg">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+<div class="imagen">
+    <img src="https://i.pinimg.com/736x/77/37/4b/77374bea898309cd082b0f08ed8e9de3.jpg" alt="">
+</div>
+                <div class="absolute top-20 left-20 w-72 h-72 rounded-full bg-purple-400 blur-xl"></div>
+                <div class="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-pink-300 blur-xl"></div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Hero Banner -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-100 to-pink-100 opacity-50"></div>
+        </div>
         
-        <!-- Partículas animadas -->
-        <div class="absolute inset-0">
-            <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-purple-400 rounded-full animate-float" style="animation-delay: 0s;"></div>
-            <div class="absolute top-1/3 right-1/4 w-6 h-6 bg-pink-300 rounded-full animate-float" style="animation-delay: 1s;"></div>
-            <div class="absolute bottom-1/4 left-1/3 w-5 h-5 bg-lila-secondary rounded-full animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute bottom-1/3 right-1/3 w-3 h-3 bg-purple-300 rounded-full animate-float" style="animation-delay: 3s;"></div>
-        </div>
-
-        <div class="relative z-10 text-center container mx-auto px-6">
-            <h1 class="hero-text text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-up">
-                Moda que respira Calma
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <h1 class="text-6xl md:text-8xl font-bold text-gray-800 mb-6">
+            Aomori
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-8 animate-fade-up" style="animation-delay: 0.2s;">
-                Diseño | Calidez | Sencillez
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                Es Moda que respira calma<br>Diseño | Calidad | Sencillez
             </p>
-            <button onclick="scrollToProducts()" class="neu-button px-8 py-4 text-white text-lg font-semibold animate-glow">
-                Ver Colección
-            </button>
+            <div class="flex justify-center space-x-6">
+<a href="https://www.mercadolibre.com.ar/tienda/aomori" class="boton-amarillo">Visita Nuestra tienda Oficial</a>
+                <a href="#nosotros" class="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-600 hover:text-white transition-all">
+                    Conoce mas de nosotros
+                </a>
+            </div>
         </div>
-
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div class="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
-                <div class="w-1 h-3 bg-purple-400 rounded-full mt-2"></div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
+            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
             </div>
         </div>
     </section>
 
-    <!-- Productos -->
-    <section id="productos" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Algunas prendas de nuestra Colección</h2>
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="py-20 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Nuestra Esencia</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto"></div>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Producto 1 -->
-                <div class="neu-card p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
-                    <div class="relative overflow-hidden rounded-xl mb-4">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_855228-MLA89572709584_082025-F.webp" alt="Chaqueta futurista Aomori con detalles reflectantes y corte moderno en color lila neón" class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110" />
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Remera Manga Corta</h3>
-                    <p class="text-gray-600 mb-4">Disponible del talle XL al 3XL</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-2xl font-bold text-purple-600">$13.467</span>
-                        <a href="https://articulo.mercadolibre.com.ar/MLA-2021008758-remera-larga-mujer-manga-corta-liviana-modal-talle-grande-_JM#polycard_client=recommendations_vip-pads-up&reco_backend=recomm_platform_base_pads_marketplace&reco_model=rk_ent_v2_retsys_ads&reco_client=vip-pads-up&reco_item_pos=3&reco_backend_type=low_level&reco_id=db720ced-7ef0-428a-979e-03ce3a0b66ac&is_advertising=true&ad_domain=VIPDESKTOP_UP&ad_position=4&ad_click_id=MzMzMzBhZGItMDllMy00M2JjLThhMTctMjFmNmQ5Mzc3MzRk" target="_blank" class="neu-button px-4 py-2 text-white text-sm">
-                            Ver mas
-                        </a>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_762684-MLA90945354639_082025-F.webp" alt="Modelo vistiendo prenda minimalista Aomori en estudio con iluminación suave y fondo neutro" class="rounded-2xl shadow-2xl w-full">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-pink-200 rounded-2xl -z-10"></div>
                     </div>
                 </div>
-
-                <!-- Producto 2 -->
-                <div class="neu-card p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
-                    <div class="relative overflow-hidden rounded-xl mb-4">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_614380-MLA89587492404_082025-F.webp" alt="" class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110" />
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Crop Top Manga Corta</h3>
-                    <p class="text-gray-600 mb-4">Disponible del talle XS al L</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-2xl font-bold text-purple-600">$10.384</span>
-                        <a href="https://articulo.mercadolibre.com.ar/MLA-1480903355-remera-crop-top-mujer-manga-corta-casual-talle-chico-_JM#polycard_client=recommendations_vip-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=rk_entity_sameseller&reco_client=vip-seller_items-above&reco_item_pos=3&reco_backend_type=low_level&reco_id=509e46a4-f60c-4bbe-99e5-ba45cb1ace98" target="_blank" class="neu-button px-4 py-2 text-white text-sm">
-                            Ver mas
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Producto 3 -->
-                <div class="neu-card p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
-                    <div class="relative overflow-hidden rounded-xl mb-4">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_717656-MLA89721161403_082025-O.webp" alt="" class="w-full h-80 object-cover transition-transform duration-500 hover:scale-110" />
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Remera Manga Corta</h3>
-                    <p class="text-gray-600 mb-4">Talles Especiales 7,8,9 y 10</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-2xl font-bold text-purple-600">$23.187</span>
-                        <a href="https://www.mercadolibre.com.ar/remera-mujer-manga-corta-liviana-talles-especiales/up/MLAU3353129010?pdp_filters=seller_id%3A463491215#polycard_client=recommendations_vip-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=rk_entity_sameseller&reco_client=vip-seller_items-above&reco_item_pos=4&reco_backend_type=low_level&reco_id=509e46a4-f60c-4bbe-99e5-ba45cb1ace98&wid=MLA2226937984&sid=recos" target="_blank" class="neu-button px-4 py-2 text-white text-sm">
-                            Ver mas
-                        </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Nosotros -->
-    <section id="nosotros" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div class="container mx-auto px-6">
-            <div class="glass-effect rounded-3xl p-8 md:p-12">
-                <h2 class="text-4xl font-bold text-center mb-8 gradient-text">Innovación en Cada Prenda</h2>
                 
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="animate-slide-in">
-                        <h3 class="text-2xl font-semibold mb-4 text-purple-700">Nuestra Filosofia</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            En Aomori, elegimos la tela de mejor calidad y tomamos todos los cuidados para que sea perfecta, al ser una marca de origen familiar
-                            entendemos la necesidad de nuestros clientes mejor que cualquier otra marca.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">
-                           Ademas debido a nuestra repuracion tambien somos <b><button>Tienda Oficial</button></b> en Mercado Libre
-            
-                        </p>
-                    </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Más que ropa, una declaración</h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        En Aomori, creemos que la moda debe ser atemporal, cómoda y expresiva. Cada pieza está diseñada con atención meticulosa a los detalles, utilizando telas de alta calidad que no solo se ven bien, sino que se sienten increíbles.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Nuestro nombre, inspirado en la serenidad de la naturaleza japonesa, refleja nuestra filosofía: simplicidad consciente, elegancia tranquila y calidad que perdura más allá de las tendencias pasajeras.
+                    </p>
                     
-                    <div class="relative animate-rotate-3d">
-                        <div class="w-80 h-80 mx-auto">
-                            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_736356-MLA88645612857_072025-F.webp" alt="Visualización 3D de tejido inteligente Aomori mostrando las capas tecnológicas y propiedades reflectantes" class="w-full h-full object-cover rounded-2xl shadow-2xl" />
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-leaf text-2xl text-pink-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Sostenible</h4>
+                            <p class="text-sm text-gray-600">Materiales eco-friendly</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-tshirt text-2xl text-purple-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-800">Calidad</h4>
+                            <p class="text-sm text-gray-600">Hecho para durar</p>
                         </div>
                     </div>
+                    
+                    <a href="https://wa.me/5491154547862?text=Hola%20Aomori,%20quiero%20saber%20más%20sobre%20ustedes" 
+                       target="_blank" 
+                       class="btn-primary px-8 py-3 rounded-full text-white font-semibold inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Nuestro whatsapp
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8 gradient-text">¿Alguna duda?</h2>
-            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">   
-               Contactanos por whatsapp a nuestro unico numero, nuestro horario de atencion es de Lunes a Viernes 9:00hs a 18:00hs
-            </p>
+    <!-- Sección Productos -->
+    <section id="productos" class="py-20 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Algunas Prendas de nuestra Coleccion</h2>
+                <p class="text-xl text-gray-600">Descubre piezas atemporales que complementarán tu estilo</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto mt-4"></div>
+            </div>
             
-            <div class="max-w-md mx-auto">
-                <button onclick="openWhatsApp()" class="neu-button px-8 py-4 text-white text-lg font-semibold w-full mb-4">
-                    <i class="fab fa-whatsapp mr-2"></i>
-                    Chatear por WhatsApp
-                </button>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Producto 1 -->
+                <div class="product-card bg-white rounded-2xl p-6 text-center">
+                    <div class="relative mb-6 rounded-xl overflow-hidden">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_762684-MLA90945354639_082025-F.webp" alt="Sweater oversize minimalista color lila con detalles sutiles y textura premium" class="w-full h-80 object-cover">
+                        <div class="absolute top-4 right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Nuevo
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Remera Manga Corta</h3>
+                    <p class="text-gray-600 mb-4">Talles Xs , S, M y L</p>
+                    <div class="flex justify-center items-center mb-4">
+                        <span class="text-2xl font-bold text-purple-600">$11.187</span>
+                    </div>
+                    <a href="https://articulo.mercadolibre.com.ar/MLA-2039040072-remera-mujer-manga-corta-talles-chicos-xs-s-m-l-premium-_JM?attributes=FABRIC_DESIGN%3ATGlzbw%3D%3D%2CPRINT_DESIGN%3ATGlzbw%3D%3D%2CCOLOR_SECONDARY_COLOR%3AQXp1bCBGcmFuY2lh&quantity=1&picker=true" target="_blank" class="btn-primary w-full py-3 rounded-xl text-white font-semibold">
+                        Comprar Ahora
+                    </a>
+                </div>
                 
-                <p class="text-gray-500 text-sm">
-                    También nos encuentras en MercadoLibre como Tienda Oficial Aomori
-                </p>
+                <!-- Producto 2 -->
+                <div class="product-card bg-white rounded-2xl p-6 text-center">
+                    <div class="relative mb-6 rounded-xl overflow-hidden">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_728782-MLA89958204129_082025-F.webp" alt="Vestido midi elegante color rosa palo con corte recto y mangas largas holgadas" class="w-full h-80 object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Crop Top Manga Corta</h3>
+                    <p class="text-gray-600 mb-4">Elegancia minimalista para cualquier ocasión</p>
+                    <div class="flex justify-center items-center mb-4">
+                        <span class="text-2xl font-bold text-purple-600">$9.547</span>
+                    </div>
+                    <a href="https://http2.mlstatic.com/D_NQ_NP_2X_728782-MLA89958204129_082025-F.webp" target="_blank" class="btn-primary w-full py-3 rounded-xl text-white font-semibold">
+                        Comprar Ahora
+                    </a>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-card bg-white rounded-2xl p-6 text-center">
+                    <div class="relative mb-6 rounded-xl overflow-hidden">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_874729-MLA90649978002_082025-F.webp" alt="Conjunto de pants deportivos minimalistas en tonos neutros con detalles en contraste" class="w-full h-80 object-cover">
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Popular
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Remera Manga Corta Escote V</h3>
+                    <p class="text-gray-600 mb-4">Disponible en Talles XL, XXL Y XXXL</p>
+                    <div class="flex justify-center items-center mb-4">
+                        <span class="text-2xl font-bold text-purple-600">$13.467</span>
+                    </div>
+                    <a href="https://articulo.mercadolibre.com.ar/MLA-2025884736-remera-mujer-larga-escote-v-manga-corta-talles-grandes-_JM#polycard_client=recommendations_vip-pads-up&reco_backend=recomm_platform_base_pads_marketplace&reco_model=rk_ent_v2_retsys_ads&reco_client=vip-pads-up&reco_item_pos=1&reco_backend_type=low_level&reco_id=4c4b1acd-1fd6-4e7a-97d3-ee4303a42e9d&is_advertising=true&ad_domain=VIPDESKTOP_UP&ad_position=2&ad_click_id=OTkxZjlkZjQtNzYyOC00M2VkLWFiOTQtZDFhMWExZTU0NTdi" target="_blank" class="btn-primary w-full py-3 rounded-xl text-white font-semibold">
+                        Comprar Ahora
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-2xl font-bold gradient-text mb-4">AOMORI</h3>
-                    <p class="text-gray-400">Diseño | Calidez | Sencillez</p>
+    <footer class="bg-gray-900 text-white py-16 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-bold mb-6">AOMORI</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Redefiniendo el minimalismo en la moda contemporánea. Creemos en la belleza de la simplicidad y el poder de la calidad atemporal.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-500 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center hover:bg-pink-400 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-2">
-                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="#productos" class="text-gray-400 hover:text-white transition-colors">Productos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
                         <li><a href="#nosotros" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li>
+                        <li><a href="#productos" class="text-gray-400 hover:text-white transition-colors">Productos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Términos y Condiciones</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Síguenos</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl">
-                            <i class="fab fa-instagram"></i><a href="https://www.instagram.com/aomoriinst" target="_blank">Instagram</a>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-400">© 2025 Aomori. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/1154547862?text=Hola%20Aomori,%20me%20interesa%20saber%20más%20sobre%20sus%20productos" 
-       class="whatsapp-float" 
-       target="_blank"> 
-        <i class="fab fa-whatsapp mt-3"></i>
-    </a>
-
-    <script>
-        // Efecto de scroll en header
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
-
-        // Smooth scroll para enlaces internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Funciones específicas
-        function scrollToProducts() {
-            document.getElementById('productos').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        }
-
-        function scrollToContact() {
-            document.getElementById('contacto').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        }
-
-        function openWhatsApp() {
-            window.open('https://wa.me/1154547862?text=Hola%20Aomori,%20me%20interesa%20saber%20más%20sobre%20sus%20productos', '_blank');
-        }
-
-        // Animación de elementos al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observar elementos para animaciones
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.neu-card, .glass-effect');
-            animatedElements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(50px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-        });
-
-        // Efecto parallax suave
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax');
-            parallaxElements.forEach(element => {
-                const speed = element.dataset.speed || 0.5;
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-400">
+                        
