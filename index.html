@@ -26,7 +26,94 @@
       --maxw: 1200px;
       --nav-w: 980px;
     }
+ body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 0.5rem 1rem; /* agrega espacio en los costados */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Botón hamburguesa */
+    .menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu {
+        display: none; /* Se ocultan los links */
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        padding: 1rem;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">MiMarca</div>
+    <div class="menu-btn" onclick="document.querySelector('.menu').classList.toggle('show')">
+      ☰
+    </div>
+    <div class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <section id="inicio" style="padding-top:80px; height:100vh; background:#eee;">
+    <h1>Inicio</h1>
+  </section>
+  <section id="productos" style="height:100vh; background:#ccc;">
+    <h1>Productos</h1>
+  </section>
+  <section id="contacto" style="height:100vh; background:#aaa;">
+    <h1>Contacto</h1>
+  </section>
+</body>
     *{box-sizing:border-box}
     html,body{height:100%}
     html{scroll-behavior:smooth}
