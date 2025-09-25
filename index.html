@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aomori</title>
-  <meta name="description" content="Landing minimalista y premium con fondo blanco, navbar flotante redondeado, anclas internas y smooth scroll. Colecciones Oversize, Crop, Básicos y Lifestyle en modal con lycra premium." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Aomori — Landing</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_2023_F1.svg" />
   <style>
-    :root{
-      --bg: #ffffff;           /* fondo blanco */
-      --surface: #ffffff;      /* capas */
-      --elev: #f7fafc;         /* tarjetas suaves */
-      --text: #0b1116;         /* texto principal */
-      --muted: #4b667a;        /* texto secundario */
-      --accent: #00e0b8;       /* acento Petronas-like */
-      --accent-2: #0bbfa2;     /* hover */
-      --border: #e6eef3;       /* líneas */
-      --radius-xl: 22px;
-      --radius-md: 14px;
-      --radius-pill: 999px;
-      --shadow: 0 20px 40px rgba(0,0,0,.08);
-      --shadow-soft: 0 10px 24px rgba(0,0,0,.06);
-      --maxw: 1200px;
-      --nav-w: 980px;
+    :root {
+      --bg: #ffffff;
+      --text: #0a0a0a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --brand: #111827;
+      --radius: 16px;
+      --container: min(1200px, 92vw);
     }
- body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
     }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; height: auto; }
 
-    /* Navbar */
-    nav {
+    /* ===== NAVBAR flotante redondeado ===== */
+    .nav-wrap {
       position: fixed;
-      top: 0;
+      top: 12px;
+      left: 0;
       width: 100%;
+      display: grid;
+      place-items: center;
+      z-index: 100;
+      padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+    }
+    nav {
+      width: var(--container);
       background: #fff;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 0.5rem 1rem; /* agrega espacio en los costados */
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.6rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-sizing: border-box;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-weight: bold;
+      font-size: 1.2rem;
     }
-
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
     .menu {
       display: flex;
       gap: 1rem;
     }
-
     .menu a {
-      text-decoration: none;
-      color: #333;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
 
     /* Botón hamburguesa */
@@ -67,10 +75,10 @@
       cursor: pointer;
     }
 
-    /* Responsive */
+    /* ===== Responsive ===== */
     @media (max-width: 768px) {
       .menu {
-        display: none; /* Se ocultan los links */
+        display: none;
         flex-direction: column;
         background: #fff;
         position: absolute;
@@ -80,365 +88,69 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         padding: 1rem;
       }
-
       .menu.show {
         display: flex;
       }
-
       .menu-btn {
         display: block;
       }
     }
+
+    /* ===== SECCIONES ===== */
+    section {
+      min-height: 100vh;
+      padding: 100px 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #inicio { background: #f9fafb; }
+    #productos { background: #e5e7eb; }
+    #contacto { background: #d1d5db; }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">MiMarca</div>
-    <div class="menu-btn" onclick="document.querySelector('.menu').classList.toggle('show')">
-      ☰
-    </div>
-    <div class="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#productos">Productos</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
-
-  <section id="inicio" style="padding-top:80px; height:100vh; background:#eee;">
-    <h1>Inicio</h1>
-  </section>
-  <section id="productos" style="height:100vh; background:#ccc;">
-    <h1>Productos</h1>
-  </section>
-  <section id="contacto" style="height:100vh; background:#aaa;">
-    <h1>Contacto</h1>
-  </section>
-</body>
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    html{scroll-behavior:smooth}
-    body{margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; line-height:1.45}
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 20px}
-
-    /* NAV flotante redondeado */
-    .nav-wrap{position:fixed; top:14px; left:50%; transform:translateX(-50%); z-index:50; width:clamp(320px, 92vw, var(--nav-w));}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; background:rgba(255,255,255,.9); border:1px solid var(--border); box-shadow:var(--shadow-soft); border-radius:var(--radius-pill); backdrop-filter:saturate(160%) blur(10px); padding:8px 10px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.5px; padding:8px 12px; border-radius:var(--radius-pill)}
-    .brand .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 16px var(--accent)}
-    .menu{display:flex; align-items:center; gap:4px}
-    .menu a{padding:10px 14px; border-radius:var(--radius-pill); color:#274556}
-    .menu a:hover{background:#f2f7fa}
-    .menu a.active{color:#003b31; background:#e9fbf7; border:1px solid #c9f7ee}
-    .cta{display:flex; gap:8px; align-items:center}
-    .btn{display:inline-flex; align-items:center; justify-content:center; height:38px; padding:0 14px; border-radius:var(--radius-pill); border:1px solid var(--border); background:transparent; color:#274556; font-weight:600}
-    .btn:hover{border-color:var(--accent); color:#005a4b}
-    .btn.primary{background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; border:none}
-    .btn.primary:hover{filter:saturate(110%) brightness(1.05)}
-    .burger{display:none; width:38px; height:38px; border-radius:var(--radius-pill); border:1px solid var(--border); align-items:center; justify-content:center}
-
-    /* HERO */
-    .spacer{height:82px} /* espacio para que el nav no tape el contenido */
-    section{scroll-margin-top:100px}
-    .hero{position:relative; isolation:isolate}
-    .hero .wrap{display:grid; grid-template-columns:1.25fr 1fr; gap:40px; padding:28px 0 56px}
-    .hero-copy h1{font-size: clamp(34px, 5vw, 56px); line-height:1.05; margin:6px 0 12px; letter-spacing:-.02em}
-    .eyebrow{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border:1px solid var(--border); color:var(--muted); border-radius:var(--radius-pill); font-size:12px; letter-spacing:.06em; text-transform:uppercase}
-    .eyebrow .pulse{width:6px; height:6px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 6px rgba(0,224,184,.15)}
-    .hero-copy p{font-size: clamp(15px, 2.3vw, 18px); color:var(--muted); margin:14px 0 24px}
-    .hero-media{position:relative}
-    .frame{position:relative; border-radius:var(--radius-xl); overflow:hidden; background:#f3f6f8; border:1px solid var(--border); box-shadow:var(--shadow)}
-    .frame .placeholder{aspect-ratio: 4 / 5; display:flex; align-items:center; justify-content:center; color:#8098a7; font-weight:600; letter-spacing:.08em; text-transform:uppercase}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .chip{border:1px solid var(--border); border-radius:var(--radius-pill); padding:8px 12px; color:var(--muted); font-size:12px}
-
-    /* STRIP */
-    .strip{border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:#fbfeff}
-    .strip ul{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:0; padding:18px 0; list-style:none}
-    .strip li{display:flex; align-items:center; gap:12px; color:#466174}
-    .dot-accent{width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent)}
-
-    /* SECCIONES */
-    .section{padding:56px 0}
-    .section h2{margin:0 0 8px; font-size: clamp(24px, 3.2vw, 34px)}
-    .section p.lead{margin:0 0 24px; color:var(--muted)}
-
-    /* GRID COLECCIÓN */
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
-    .card{background:var(--elev); border:1px solid var(--border); border-radius:var(--radius-xl); overflow:hidden; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease}
-    .card:hover{transform:translateY(-3px); border-color:#cfe9e3; box-shadow:0 12px 30px rgba(0,224,184,.08)}
-    .card .img{aspect-ratio: 4 / 5; background:linear-gradient(135deg,#f6fafc,#edf6f9); display:flex; align-items:center; justify-content:center; color:#8aa0b3; font-weight:600; letter-spacing:.1em}
-    .card .body{padding:14px 14px 16px}
-    .meta{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:8px; color:#4f6b7e}
-    .price{font-weight:700; color:var(--text)}
-    .pill{display:inline-flex; padding:6px 10px; border:1px solid var(--border); border-radius:var(--radius-pill); font-size:12px; color:#4f6b7e}
-
-    /* BLOQUE STORY */
-    .story{display:grid; grid-template-columns:1.1fr 1fr; gap:28px; background:#fbfeff; border:1px solid var(--border); border-radius:var(--radius-xl); padding:28px; box-shadow:var(--shadow-soft)}
-    .story .media{border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border)}
-    .story .copy h3{margin:0 0 8px; font-size: clamp(20px, 2.8vw, 28px)}
-    .story .copy p{color:var(--muted)}
-
-    /* CTA */
-    .cta-block{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px; border:1px solid var(--border); border-radius:var(--radius-xl); background:#f7fbfd}
-    .cta-block .title{font-weight:700}
-
-    /* FOOTER */
-    footer{border-top:1px solid var(--border); margin-top:48px; padding:32px 0; color:#6b8799}
-
-    /* RESPONSIVE */
-    @media (max-width: 1100px){:root{--nav-w: 760px}}
-    @media (max-width: 900px){:root{--nav-w: 92vw} .hero .wrap{grid-template-columns:1fr} .story{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} .strip ul{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width: 560px){ .grid{grid-template-columns:1fr} .menu{display:none} .burger{display:flex} }
-  </style>
-</head>
-<body>
-  <!-- NAV FLOTANTE REDONDEADO -->
-  <div class="nav-wrap" aria-label="Barra de navegación principal">
-    <div class="nav">
-      <a class="brand" href="#hero" aria-label="Aomori Home">
-        <span class="dot" aria-hidden="true"></span>
+  <!-- NAVBAR -->
+  <div class="nav-wrap">
+    <nav>
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Logo_2023_F1.svg" alt="Logo Aomori">
         AOMORI
-      </a>
-      <nav class="menu" aria-label="Secciones">
-        <a href="#coleccion" data-section="coleccion" class="active">Colección</a>
-        <a href="#basicos" data-section="basicos">Básicos</a>
-        <a href="#lifestyle" data-section="lifestyle">Lifestyle</a>
-        <a href="#contacto" data-section="contacto">Contacto</a>
-      </nav>
-      <div class="cta">
-        <a class="btn" href="#coleccion">Explorar</a>
-        <a class="btn primary" href="https://www.mercadolibre.com.ar/tienda/aomori">Comprar</a>
-        <button class="burger" id="burger" aria-label="Abrir menú">≡</button>
       </div>
-    </div>
-    <div id="mobileMenu" class="mobile" style="display:none; background:#ffffff; border:1px solid var(--border); border-top:none; border-radius:0 0 var(--radius-xl) var(--radius-xl); box-shadow:var(--shadow-soft); overflow:hidden">
-      <a href="#coleccion" style="display:block; padding:14px 16px; border-top:1px solid var(--border)">Colección</a>
-      <a href="#basicos" style="display:block; padding:14px 16px; border-top:1px solid var(--border)">Básicos</a>
-      <a href="#oversize" style="display:block; padding:14px 16px; border-top:1px solid var(--border)">Oversize</a>
-      <a href="#lifestyle" style="display:block; padding:14px 16px; border-top:1px solid var(--border)">Lifestyle</a>
-      <a href="#contacto" style="display:block; padding:14px 16px; border-top:1px solid var(--border)">Contacto</a>
-    </div>
+      <div class="menu-btn" onclick="document.querySelector('.menu').classList.toggle('show')">☰</div>
+      <div class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
   </div>
 
-  <div class="spacer" aria-hidden="true"></div>
-
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="container wrap">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="pulse" aria-hidden="true"></span>PRECIO TIENEN TODOS, CALIDAD MUY POCOS.</span>
-        <h1>AOMORI</h1>
-        <p>Básicos, deportivos y cápsulas exclusivas</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap">
-          <a class="btn primary" href="#coleccion">Ver colección</a>
-          <a class="btn" href="#lifestyle">Ver Lifestyle</a>
-        </div>
-        <div class="badges">
-          <span class="chip">Ultra‑soft</span>
-          <span class="chip">Secado rápido</span>
-          <span class="chip">No transparenta</span>
-          <span class="chip">Hecho en familia</span>
-        </div>
-      </div>
-      <div class="hero-media">
-        <div class="frame">
-          <!-- Reemplaza por tu foto hero -->
-          <div class="placeholder">  <img src="https://http2.mlstatic.com/D_NQ_NP_2X_788321-MLA93385651443_092025-F.webp" 
-       alt="" 
-       width="100%"></div>
-          </div>
-      </div>
-    </div>
+  <!-- SECCIONES -->
+  <section id="inicio">
+    <h1>Bienvenidos a Aomori</h1>
+    <p>Marca de origen familiar, ropa básica y deportiva con calidad premium.</p>
   </section>
 
-  <!-- STRIP BENEFICIOS -->
-  <section class="strip">
-    <div class="container">
-      <ul>
-        <li><span class="dot-accent"></span> Calidad Premium</li>
-        <li><span class="dot-accent"></span> Costuras limpias y duraderas</li>
-        <li><span class="dot-accent"></span> Calce real y Comodo</li>
-        <li><span class="dot-accent"></span> Envíos a todo el país</li>
-      </ul>
-    </div>
+  <section id="productos">
+    <h1>Nuestros Productos</h1>
+    <p>Oversize, crop tops, básicos y más. Confeccionados en modal con lycra.</p>
   </section>
 
-  <!-- COLECCIÓN DESTACADA -->
-  <section id="coleccion" class="section container">
-    <h2>Colección Destacada</h2>
-    <p class="lead">Algunos de nuestros productos.</p>
-    <div class="grid">
-      <!-- Card 1 -->
-      <article class="card">
-        <div class="img"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_618010-MLA91730287649_092025-F.webp" alt=""></div>
-        <div class="body">
-          <div class="pill">Manga Corta</div>
-          <h3 style="margin:8px 0 0">Remera oversize</h3>
-          <div class="meta">
-            <span class="price">$23.530</span>
-            <a class="btn" href="#contacto">Ver</a>
-          </div>
-        </div>
-      </article>
-      <!-- Card 2 -->
-      <article class="card">
-        <div class="img"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_636182-MLA93318261299_092025-F.webp" alt=""></div>
-        <div class="body">
-          <div class="pill">Crop Sport</div>
-          <h3 style="margin:8px 0 0">Crop boxy fit manga corta</h3>
-          <div class="meta">
-            <span class="price">$15.725</span>
-            <a class="btn" href="#contacto">Ver</a>
-          </div>
-        </div>
-      </article>
-      <!-- Card 3 -->
-      <article class="card">
-        <div class="img"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_632383-MLA92804036808_092025-F.webp" alt=""></div>
-        <div class="body">
-          <div class="pill">Capsula Exclusiva</div>
-          <h3 style="margin:8px 0 0">Remera Bicolor</h3>
-          <div class="meta">
-            <span class="price">$31.090</span>
-            <a class="btn" href="#contacto">Ver</a>
-          </div>
-        </div>
-      </article>
-    </div>
+  <section id="contacto">
+    <h1>Contacto</h1>
+    <p>Escribinos para mayorista, colaboraciones y pedidos especiales.</p>
   </section>
-
-  <!-- BÁSICOS -->
-  <section id="basicos" class="section container">
-    <h2>Básicos</h2>
-    <p class="lead">Tus esenciales en modal con lycra: suaves, duraderos y con calce impecable.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="img"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_678665-MLA93309461483_092025-F.webp" alt=""></div>
-        <div class="body">
-          <div class="pill">Básico</div>
-          <h3 style="margin:8px 0 0">Escote V manga corta</h3>
-          <div class="meta"><span class="price">$17.860</span><a class="btn" href="#contacto">Ver</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="img"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_648126-MLA86042183924_062025-F.webp" alt=""></div>
-        <div class="body">
-          <div class="pill">Básico</div>
-          <h3 style="margin:8px 0 0">Escote V manga larga</h3>
-          <div class="meta"><span class="price">$21.640</span><a class="btn" href="#contacto">Ver</a></div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="img"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_669673-MLA88028410944_072025-F.webp" alt=""></div>
-        <div class="body">
-          <div class="pill">Básico</div>
-          <h3 style="margin:8px 0 0">Escote Redondo manga larga</h3>
-          <div class="meta"><span class="price">$21.640</span><a class="btn" href="#contacto">Ver</a></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- STORY / ORIGEN FAMILIAR -->
-  <section id="lifestyle" class="section container">
-    <div class="story">
-      <div class="media">
-        <div class="placeholder" style="aspect-ratio:16/10"><img src="https://http2.mlstatic.com/D_NQ_NP_2X_878699-MLA92803653772_092025-F.webp" alt="" width="100%"></div>
-      </div>
-      <div class="copy">
-        <h3>Marca de origen familiar. Hecha con tiempo y criterio.</h3>
-        <p>Diseñamos y producimos en serie corta para asegurar consistencia en calce y calidad. Nuestro modal con lycra es suave, con buena recuperación y cero transparencias. Inspirados en la pista, pensados para tu día a día.</p>
-        <div style="display:flex; gap:12px; margin-top:10px">
-          <a class="btn" href="#basicos">Ver Básicos</a>
-          <a class="btn" href="#coleccion">Ver Coleccion</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="section container">
-    <div class="cta-block">
-      <div>
-        <div class="eyebrow" style="border:none; padding-left:0"><span class="pulse"></span> Nueva tirada</div>
-        <div class="title" style="font-size:20px; margin-top:6px">No fabricamos en serie: cada remera es creada con dedicación, cuidando cada detalle.</div>
-        <div style="color:var(--muted); margin-top:4px">Edición mensual. Producción local responsable.</div>
-      </div>
-      <a class="btn primary" href="https://www.mercadolibre.com.ar/tienda/aomori">Comprar ahora</a>
-    </div>
-  </section>
-
-  <footer id="contacto">
-    <div class="container" style="display:grid; gap:14px">
-      <div style="display:flex; align-items:center; gap:10px"><span class="dot" style="background:var(--accent)"></span> AOMORI — 2025</div>
-      <div style="display:flex; gap:20px; flex-wrap:wrap; color:#6b8799">
-        <a href="#">Términos</a>
-        <a href="#">Privacidad</a>
-        <a href="#">Soporte</a>
-        <a href="#">Instagram</a>
-      </div>
-    </div>
-  </footer>
 
   <script>
-    // ----- Mobile menu toggle
-    const burger = document.getElementById('burger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    burger?.addEventListener('click', ()=>{
-      const visible = mobileMenu.style.display === 'block';
-      mobileMenu.style.display = visible ? 'none' : 'block';
-      burger.setAttribute('aria-expanded', String(!visible));
-    });
-
-    // ----- Smooth scroll offset fix for fixed nav
-    function scrollWithOffset(hash){
-      const el = document.querySelector(hash);
-      if(!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - 90; // compensar altura del nav
-      window.scrollTo({top:y, behavior:'smooth'});
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id && id.length > 1){
-          const el = document.querySelector(id);
-          if(el){
-            e.preventDefault();
-            scrollWithOffset(id);
-            mobileMenu.style.display = 'none';
-          }
-        }
+    // Cerrar menú cuando se hace click en un link (mobile)
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.menu').classList.remove('show');
       });
     });
-
-    // ----- Active link on scroll (scrollspy ligero)
-    const sections = ['hero','coleccion','basicos','oversize','lifestyle','contacto'];
-    const menuLinks = Array.from(document.querySelectorAll('.menu a'));
-
-    const onScroll = ()=>{
-      let current = 'hero';
-      const offset = 120;
-      sections.forEach(id=>{
-        const el = document.getElementById(id);
-        if(el && window.scrollY >= el.offsetTop - offset){ current = id; }
-      });
-      menuLinks.forEach(a=>{
-        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-      });
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    window.addEventListener('load', onScroll);
-
-    // ----- Replace placeholders with your images (ejemplo)
-    // document.querySelectorAll('.placeholder').forEach((ph)=>{
-    //   ph.textContent='';
-    //   ph.style.backgroundImage = 'url(./tu-imagen.jpg)';
-    //   ph.style.backgroundSize='cover';
-    //   ph.style.backgroundPosition='center';
-    // });
   </script>
 </body>
 </html>
